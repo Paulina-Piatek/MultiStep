@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiStep</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section>
+    <form data-multi-step class="multi-step-form">
+        <div class="card" data-step>
+            <h3 class="step-title">Create your account</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email">
+                        <!-- <input type="email" required name="email" id="email"> -->
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" data-next>Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-step>
+            <h3 class="step-title">Personal Details</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="text">First Name</label>
+                        <input type="text" name="FirstName" id="FirstName" >
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="text">Last Name</label>
+                        <input type="text" name="LastName" id="LastName" >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" data-previous>Previous</button>
+                    <button type="button" data-next>Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-step>
+            <h3 class="step-title">Address</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="zipcode">Zip Code</label>
+                        <input type="text" name="zipcode" id="zipcode">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="number">Country</label>
+                        <input type="text" name="country" id="country">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="number" name="number" id="number">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" data-previous>Previous</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </section>
+</body>
+</html>
