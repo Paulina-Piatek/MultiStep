@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700;800;900&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  background: #001923;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: flex;
+  width: 100%;
+}
+.card {
+  z-index: 100;
+  padding: 20px;
+  margin: 0 auto;
+  animation: fade 250ms ease-in-out forwards;
+  display: none;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transform: skewX(-15deg);
+  pointer-events: none;
+}
+.hide {
+  display: none;
+}
+.multi-step-form .card .row {
+  position: relative;
+  width: 100%;
+  display: grid;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.multi-step-form .card .row .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 20px;
+}
+.multi-step-form .row .col .form-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+.multi-step-form .card .row .col .form-group input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: white;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  color: #000;
+}
+.font-group:last-child {
+  margin: 0;
+}
+.multi-step-form .card .row .col .form-group label {
+  top: -35px;
+  left: -10px;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0;
+  display: block;
+  transition: 0.3s;
+  pointer-events: none;
+  color: white;
+}
+.multi-step-form .card .row .col button {
+  border: none;
+  padding: 10px 40px;
+  cursor: pointer;
+  outline: none;
+  background: #fff;
+  color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.step-title {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+}
+.card.active {
+  display: block;
+
+  animation: slide 250ms 125ms ease-in-out both;
+}
+.multi-step-form {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@media (max-width: 768px) {
+  section::before {
+    transform: translate(-200px, -180px);
+  }
+  section::after {
+    transform: translate(220px, 180px);
+  }
+  .multi-step-form {
+    padding: 20px;
+  }
+  .step-title {
+    font-size: 28px;
+  }
+}
